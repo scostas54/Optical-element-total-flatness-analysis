@@ -1,18 +1,17 @@
-function [M]=MatrizM(D) % Se introduce el número de diámetros en los que se quiere
-%dividir la imagen y la función devuelve la matriz M
-identidad=eye(2*D); % definimos la matriz identidad de 2diam X 2diam elementos 
-Z= zeros(2*D);    % matriz de 2N x 2N elementos compuesta por ceros
+function [M]=MatrizM(D) % Enter the number of diameters in which you want to
+% divide the image, the function returns the matrix M
+identidad=eye(2*D); % we define the identity matrix of 2diam X 2diam elements
+Z= zeros(2*D);    % 2N x 2N matrix composed of zeros
 identidad1=eye(2*D); identidad2=eye(2*D); 
-% Obtención de la primera matriz similar a la identidad pero con las filas
-% cambiadas de posición
+% Obtaining the first matrix similar to the identity but with the rows changed position
 cont2=0;
 for cont1=(2*D-1):(-1):1       
         cont2=cont2+1;    
         identidad1(cont2,:)=identidad(cont1,:);   
 end
-cont2=1; % reiniciamos el valor de los contadores
-% Obtención de la segunda matriz similar a la identidad pero con las filas
-% cambiadas
+cont2=1; % we reset the value of the counters
+% Obtaining the second matrix similar to the identity but with the rows
+% changed
 for cont1=(2*D):(-1):2
         cont2=cont2+1;
         identidad2(cont2,:)=identidad(cont1,:);    
